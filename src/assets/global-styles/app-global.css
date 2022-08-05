@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary: rgb(75, 108, 193);
+  --secondary: rgb(116, 28, 232);
+
+  --primary-rgb: 75, 108, 193;
+  --secondary-rgb: 116, 28, 232;
+
+  --black: rgb(40, 39, 44);
+  --white: rgb(255, 255, 255);
+
+  --gray-100: hsl(210, 17%, 98%);
+  --gray-200: hsl(210, 16%, 93%);
+  --gray-300: hsl(210, 14%, 89%);
+  --gray-400: hsl(210, 14%, 83%);
+  --gray-500: hsl(210, 11%, 71%);
+  --gray-600: hsl(208, 7%, 46%);
+  --gray-700: hsl(210, 9%, 31%);
+  --gray-800: hsl(210, 10%, 23%);
+  --gray-900: hsl(210, 11%, 15%);
+
+  --body-color: var(--black);
+  --body-bg: #fff;
+  --poppins-font: sans-serif, Arial, Helvetica;
+  --shadow-one: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.25);
+  --shadow-two: 0 1px 5px rgba(0, 0, 0, 0.03), 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: var(--balck);
+  background: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--primary);
+  transition: 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons  */
+.btn {
+  border: none;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: 1000px;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background: none;
+  box-shadow: inset 0 0 0 2px var(--primary);
+  color: var(--primary);
+  transform: scale(1.075);
+}
+
+/* Section Title  */
+
+section {
+  overflow: hidden;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+.section-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-title h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  line-height: 1.7;
+  padding: 0 16px;
+}
+
+.section-title h3::after {
+  content: "";
+  width: 40px;
+  height: 6px;
+  display: inline-block;
+  background: var(--primary);
+  position: absolute;
+  bottom: -1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
+
+.section-title h3::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  display: inline-block;
+  background: var(--gray-400);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
