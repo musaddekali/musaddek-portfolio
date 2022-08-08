@@ -1,28 +1,34 @@
-import { Link } from 'react-router-dom';
 import { api } from '../../api/api';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
+
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
     const { portfolios } = api;
 
     return (
-        <section id='portfolio' className="portfolio section-padding">
+        <motion.section
+            key='portfolio'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ x: -1000 }}
+            transition={{ duration: 0.3 }}
+            id='portfolio'
+            className="portfolio section-padding"
+        >
             <div className="container">
                 <div className="section-title">
                     <h3>Portfolio</h3>
                 </div>
                 <div className="row">
                     {
-                        portfolios.slice(0, 3).map(item => (
+                        portfolios.map(item => (
                             <PortfolioCard key={item.id} portfolio={item} />
                         ))
                     }
                 </div>
-                <div className="portfolio-cta text-center mt-4">
-                    <Link to="/portfolio" className="btn">See All Portfolio</Link>
-                </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

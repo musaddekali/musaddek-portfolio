@@ -45,6 +45,9 @@ const Hero = () => {
                 Facebook
               </a>{" "}
             </div>
+            <div className="hero-card-cta mt-4">
+              <a href="https://drive.google.com/file/d/1yYaZQq2R79-EBIIQIomm8Fwc6x1hNOoC/view?usp=sharing" target='_blank' className="btn">My Resume</a>
+            </div>
           </div>
         </div>
       </div>

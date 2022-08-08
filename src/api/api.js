@@ -57,7 +57,7 @@ export const api = {
             id: 3,
             icon: <SiMaterialdesignicons />,
             title: 'Design Tools',
-            skillsItem: ['Figma'],
+            skillsItem: ['Figma', 'Photoshop'],
         },
         {
             id: 4,

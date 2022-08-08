@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Img from '../../assets/images/person.png';
 
 const menu = [
@@ -25,20 +26,20 @@ const menu = [
 ]
 
 const Navbar = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(null);
 
   return (
     <nav className="navmenu">
       <div className="navmenu-left">
-        <a className='logo' href="/">
+        <Link className='logo' to="/">
           <img className='logo-img' src={Img} alt="Musaddek ali headshot" />
           <span className="logo-text d-md-none">Musaddek</span>
-        </a>
+        </Link>
       </div>
       <div className="navmenu-right">
-        <a href="/" className="logo d-none d-md-inline-block">
+        <Link to="/" className="logo d-none d-md-inline-block">
           <span className="logo-text">Musaddek</span>
-        </a>
+        </Link>
         <div className='navmenu-items'>
           {
             menu.map((item, i) => (

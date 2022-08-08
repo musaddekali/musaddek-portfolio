@@ -35,7 +35,6 @@
 .header-scrolled .logo-img {
   width: 50px;
   height: 50px;
-  transition: 0.3s;
 }
 
 .header-scrolled .navmenu-items {
@@ -72,6 +71,7 @@
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+  transition: 0.5s;
 }
 
 .logo-text {
