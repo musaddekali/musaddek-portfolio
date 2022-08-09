@@ -1,19 +1,51 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+
+  const heroCardV = {
+    visible: {
+      x: 0,
+      transition: { duration: 0.3 }
+    },
+    hidden: {
+      x: 100
+    }
+  }
+
+  const listV = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  }
+
+  const itemV = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  }
+
   return (
     <section className="hero section-padding">
       <div className="container">
-        <div className="hero-card">
-          <div className="hero-card-in">
-            <h1 className="hero-card-title">👋 Hi, I'm Musaddek Ali</h1>
-            <p className="hero-card-desc txt-lg">
+        <motion.div initial='hidden' animate='visible' variants={heroCardV} className="hero-card">
+          <motion.div variants={listV} className="hero-card-in">
+            <motion.h1 variants={itemV} className="hero-card-title">👋 Hi, I'm Musaddek Ali</motion.h1>
+            <motion.p variants={itemV} className="hero-card-desc txt-lg">
               I'm a web developer from Sylhet, Bangladesh. Currently i'm working
               as a freelancer in Fiverr. In my spare time I enjoy gaming and
               building my own projects. My preferred tools are React js,
               JavaScript, HTML, CSS, Bootstrap and VScode etc.
-            </p>
-            <div className="txt-lg">
+            </motion.p>
+            <motion.div variants={itemV} className="txt-lg">
               I'm on{" "}
               <a
                 className="hero-card-link"
@@ -44,12 +76,21 @@ const Hero = () => {
               >
                 Facebook
               </a>{" "}
-            </div>
+            </motion.div>
             <div className="hero-card-cta mt-4">
-              <a href="https://drive.google.com/file/d/1yYaZQq2R79-EBIIQIomm8Fwc6x1hNOoC/view?usp=sharing" target='_blank' className="btn">My Resume</a>
+              <motion.a
+                variants={itemV}
+                whileTap={{scale: 0.9}}
+                whileHover={{scale: 1.1}}
+                href="https://drive.google.com/file/d/1yYaZQq2R79-EBIIQIomm8Fwc6x1hNOoC/view?usp=sharing"
+                target='_blank'
+                className="btn"
+              >
+                My Resume
+              </motion.a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
