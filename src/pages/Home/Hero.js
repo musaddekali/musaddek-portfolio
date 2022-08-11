@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
 
+// Animation Variants 
   const heroCardV = {
     visible: {
       x: 0,
@@ -32,7 +33,7 @@ const Hero = () => {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
   }
-
+// End Variants 
   return (
     <section className="hero section-padding">
       <div className="container">
@@ -50,6 +51,7 @@ const Hero = () => {
               <a
                 className="hero-card-link"
                 target="_blank"
+                rel="noreferrer"
                 href="https://github.com/musaddekali"
               >
                 Github
@@ -57,6 +59,7 @@ const Hero = () => {
               <a
                 className="hero-card-link"
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.linkedin.com/in/musaddekalidev"
               >
                 Linkedin
@@ -64,6 +67,7 @@ const Hero = () => {
               <a
                 className="hero-card-link"
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.instagram.com/webdevmusaddek"
               >
                 Instagram
@@ -72,6 +76,7 @@ const Hero = () => {
               <a
                 className="hero-card-link"
                 target="_blank"
+                rel="noreferrer"
                 href="https://web.facebook.com/musaddekali.dev"
               >
                 Facebook
@@ -84,6 +89,7 @@ const Hero = () => {
                 whileHover={{scale: 1.1}}
                 href="https://drive.google.com/file/d/1yYaZQq2R79-EBIIQIomm8Fwc6x1hNOoC/view?usp=sharing"
                 target='_blank'
+                rel="noreferrer"
                 className="btn"
               >
                 My Resume
