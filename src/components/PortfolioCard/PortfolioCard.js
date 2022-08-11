@@ -1,9 +1,17 @@
 import './PortfolioCard.css';
+import { motion } from 'framer-motion';
+import { scrollVariants, scrollViewport } from '../../utils/utils';
 
-const PortfolioCard = ({portfolio}) => {
+const PortfolioCard = ({ portfolio }) => {
     const { title, desc, image, codeLink, previewLink } = portfolio;
     return (
-        <div className="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
+        <motion.div
+            initial='offscreen'
+            whileInView='onscreen'
+            viewport={scrollViewport}
+            variants={scrollVariants}
+            className="col-md-6 col-lg-4 mb-4 d-flex align-items-stretch"
+        >
             <div className="img-box">
                 <img className='img-box-img' height='400' width='400' src={image} alt={title} />
                 <div className="img-box-title-overlay">
@@ -17,7 +25,7 @@ const PortfolioCard = ({portfolio}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

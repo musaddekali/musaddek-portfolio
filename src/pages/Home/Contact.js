@@ -1,4 +1,5 @@
-import React from 'react'
+import { motion } from 'framer-motion';
+import { scrollVariants } from '../../utils/utils';
 
 const Contact = () => {
     return (
@@ -7,8 +8,14 @@ const Contact = () => {
                 <div className="section-title">
                     <h3>Contact</h3>
                 </div>
-                <div className="row">
-                    <div className="col">
+                <motion.div
+                    initial='offscreen'
+                    whileInView='onscreen'
+                    viewport={{once: true}}
+                    variants={scrollVariants}
+                    className="row"
+                >
+                    <div className="col" >
                         <div className="card">
                             <div className="card-body">
                                 <p>
@@ -23,9 +30,9 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </section >
     )
 }
 
