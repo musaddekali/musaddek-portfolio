@@ -82,12 +82,13 @@ const Hero = () => {
                 Facebook
               </a>{" "}
             </motion.div>
+            {/* Resume Link  */}
             <div className="hero-card-cta mt-4">
               <motion.a
                 variants={itemV}
                 whileTap={{scale: 0.9}}
                 whileHover={{scale: 1.1}}
-                href="https://drive.google.com/file/d/1yYaZQq2R79-EBIIQIomm8Fwc6x1hNOoC/view?usp=sharing"
+                href="https://drive.google.com/file/d/1UfLxsWiCrVNgocsltqejH7Gm6AopbP9t/view?usp=sharing"
                 target='_blank'
                 rel="noreferrer"
                 className="btn"
