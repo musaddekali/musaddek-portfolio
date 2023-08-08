@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 import './assets/global-styles/app-global.css';
 import Layout from "./components/Layout/Layout";
-import { Home, NoPage, Portfolio } from './pages';
+import { Home, NoPage, Portfolio, Resume } from './pages';
 
 function App() {
   const location = useLocation();
@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='portfolio' element={<Portfolio />} />
+            <Route path='resume' element={<Resume />} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
 
 const Hero = () => {
-
-// Animation Variants 
+  // Animation Variants
   const heroCardV = {
     visible: {
       x: 0,
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3 },
     },
     hidden: {
-      x: 100
-    }
-  }
+      x: 100,
+    },
+  };
 
   const listV = {
     visible: {
@@ -27,33 +26,29 @@ const Hero = () => {
         when: "afterChildren",
       },
     },
-  }
+  };
 
   const itemV = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
-  }
-// End Variants 
+  };
+  // End Variants
   return (
     <section className="hero section-padding">
       <div className="container">
-        <motion.div initial='hidden' animate='visible' variants={heroCardV} className="hero-card">
+        <motion.div initial="hidden" animate="visible" variants={heroCardV} className="hero-card">
           <motion.div variants={listV} className="hero-card-in">
-            <motion.h1 variants={itemV} className="hero-card-title">👋 Hi, I'm Musaddek Ali</motion.h1>
+            <motion.h1 variants={itemV} className="hero-card-title">
+              👋 Hi, I'm Musaddek Ali
+            </motion.h1>
             <motion.p variants={itemV} className="hero-card-desc txt-lg">
-              I'm a web developer from Sylhet, Bangladesh. Currently i'm working
-              as a freelancer in Fiverr. In my spare time I enjoy gaming and
-              building my own projects. My preferred tools are React js,
-              JavaScript, HTML, CSS, Bootstrap and VScode etc.
+              I'm a web developer from Sylhet, Bangladesh. Currently i'm working as a freelancer in Fiverr. In my spare
+              time I enjoy gaming and building my own projects. My preferred tools are React js, JavaScript, HTML, CSS,
+              Bootstrap and VScode etc.
             </motion.p>
             <motion.div variants={itemV} className="txt-lg">
               I'm on{" "}
-              <a
-                className="hero-card-link"
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/musaddekali"
-              >
+              <a className="hero-card-link" target="_blank" rel="noreferrer" href="https://github.com/musaddekali">
                 Github
               </a>{" "}
               <a
@@ -86,10 +81,10 @@ const Hero = () => {
             <div className="hero-card-cta mt-4">
               <motion.a
                 variants={itemV}
-                whileTap={{scale: 0.9}}
-                whileHover={{scale: 1.1}}
+                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.1 }}
                 href="https://drive.google.com/file/d/1UfLxsWiCrVNgocsltqejH7Gm6AopbP9t/view?usp=sharing"
-                target='_blank'
+                target="_blank"
                 rel="noreferrer"
                 className="btn"
               >

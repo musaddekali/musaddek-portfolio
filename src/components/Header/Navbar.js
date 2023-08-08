@@ -1,29 +1,34 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import Img from '../../assets/images/person.png';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Img from "../../assets/images/person.png";
 
 const menu = [
   {
     id: 1,
-    title: 'services',
-    link: '#services'
+    title: "services",
+    link: "#services",
   },
   {
     id: 2,
-    title: 'skills',
-    link: '#skills'
+    title: "skills",
+    link: "#skills",
   },
   {
     id: 3,
-    title: 'portfolio',
-    link: '#portfolio'
+    title: "portfolio",
+    link: "#portfolio",
   },
   {
     id: 4,
-    title: 'contact',
-    link: '#contact'
+    title: "contact",
+    link: "#contact",
   },
-]
+  {
+    id: 5,
+    title: "resume",
+    link: "/resume",
+  },
+];
 
 const Navbar = () => {
   const [index, setIndex] = useState(null);
@@ -31,8 +36,8 @@ const Navbar = () => {
   return (
     <nav className="navmenu">
       <div className="navmenu-left">
-        <Link className='logo' to="/">
-          <img className='logo-img' src={Img} alt="Musaddek ali headshot" />
+        <Link className="logo" to="/">
+          <img className="logo-img" src={Img} alt="Musaddek ali headshot" />
           <span className="logo-text d-md-none">Musaddek</span>
         </Link>
       </div>
@@ -40,23 +45,31 @@ const Navbar = () => {
         <Link to="/" className="logo d-none d-md-inline-block">
           <span className="logo-text">Musaddek</span>
         </Link>
-        <div className='navmenu-items'>
-          {
-            menu.map((item, i) => (
-              <a
-                key={item.id}
-                onClick={() => setIndex(i)}
-                className={`navmenu-item ${i === index ? 'active' : ''}`}
-                href={item.link}
-              >
-                {item.title}
-              </a>
-            ))
-          }
+        <div className="navmenu-items">
+          {menu.map((item, i) => {
+            if (!item.link.startsWith("/")) {
+              return (
+                <a
+                  key={item.id}
+                  onClick={() => setIndex(i)}
+                  className={`navmenu-item ${i === index ? "active" : ""}`}
+                  href={item.link}
+                >
+                  {item.title}
+                </a>
+              );
+            } else {
+              return (
+                <Link key={item.id} className={`navmenu-item ${i === index ? "active" : ""}`} to={item.link}>
+                  {item.title}
+                </Link>
+              );
+            }
+          })}
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
